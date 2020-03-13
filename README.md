@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="https://osu.lumilous.tk/static/black.png" alt="logo" width="400" />
+  <img src="https://osu.lumilous.tk/static/about/black.png" alt="logo" width="400" />
 </p>
 
 <p align="center">
-Made with ❤️ by <img src="https://osu.lumilous.tk/static/github/Varkaria.png" alt="logo" width="100" /></p> And <img src="https://osu.lumilous.tk/static/github/LumilousCD.png" alt="logo" width="100" /></p>
+Made with ❤️ by <img src="https://osu.lumilous.tk/static/github/Varkaria.png" alt="logo" width="100" /></p> And <img src="https://osu.lumilous.tk/static/github/LumilousCD.png" alt="logo2" width="90" /></p>
 
 <p align="center">
   <b>This is open source osu!lumilous Hanayo for osu!private server</b></br>
