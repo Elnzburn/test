@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-Made with ❤️ by <img src="https://osu.lumilous.tk/static/github/Varkaria.png" alt="logo" width="100" /></p> And <img src="https://osu.lumilous.tk/static/github/LumilousCD.png" alt="logo2" width="90" /></p>
+Made with ❤️ by <img src="https://osu.lumilous.tk/static/github/Varkaria.png" alt="logo" width="100"/> And <img src="https://osu.lumilous.tk/static/github/LumilousCD.png" alt="logo2" width="140"/></p>
 
 <p align="center">
   <b>This is open source osu!lumilous Hanayo for osu!private server</b></br>
