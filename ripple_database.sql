@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
--- Host:                         ainu.pw
+-- Host:                         osu.lumilous.tk
 -- Server version:               5.7.28-0ubuntu0.18.04.4 - (Ubuntu)
 -- Server OS:                    Linux
--- osu!Ainu DB structure by Hazuki-san
+-- osu!lumilous database
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;

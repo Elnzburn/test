@@ -11,14 +11,14 @@ printf "\nInstall directory "[$(pwd)"/ripple"]": "
 read MasterDir
 MasterDir=${MasterDir:=$(pwd)"/ripple"}
 
-printf "\n\n..:: NGINX CONFIGS ::.."
+printf "\n\nNGINX CONFIGS"
 while [ $valid_domain -eq 0 ]
 do
 printf "\nMain domain name: "
 read domain
 
 if [ "$domain" = "" ]; then
-	printf "\n\nYou need to specify the main domain. Example: cookiezi.pw"
+	printf "\n\nYou need to specify the main domain. Example: lumilous.tk"
 else
 	printf "\n\nFrontend: $domain"
 	printf "\nBancho: c.$domain"
@@ -32,17 +32,17 @@ else
 fi
 done
 
-printf "\n\n..:: BANCHO SERVER ::.."
+printf "\n\nBANCHO SERVER"
 printf "\ncikey [changeme]: "
 read peppy_cikey
 peppy_cikey=${peppy_cikey:=changeme}
 
-printf "\n\n..:: LETS SERVER::.."
+printf "\n\nLETS SERVER"
 printf "\nosuapi-apikey [YOUR_OSU_API_KEY_HERE]: "
 read lets_osuapikey
 lets_osuapikey=${lets_osuapikey:=YOUR_OSU_API_KEY_HERE}
 
-printf "\n\n..:: FRONTEND ::.."
+printf "\n\nHANAYO"
 printf "\nPort [6969]: "
 read hanayo_port
 hanayo_port=${hanayo_port:=6969}
@@ -50,10 +50,10 @@ printf "\nAPI Secret [Potato]: "
 read hanayo_apisecret
 hanayo_apisecret=${hanayo_apisecret:=Potato}
 
-printf "\n\n..:: DATABASE ::.."
-printf "\nUsername [aoba]: "
+printf "\n\nDATABASE"
+printf "\nUsername [name]: "
 read mysql_usr
-mysql_usr=${mysql_usr:=aoba}
+mysql_usr=${mysql_usr:=name}
 printf "\nPassword [meme]: "
 read mysql_psw
 mysql_psw=${mysql_psw:=meme}
@@ -91,7 +91,7 @@ cd ripple
 
 echo "Downloading Bancho server..."
 cd $MasterDir
-git clone https://github.com/osuthailand/pep.py
+git clone https://github.com/Lumilous-Private-osu/pep.py
 cd pep.py
 git submodule init && git submodule update
 python3.6 -m pip install -r requirements.txt
@@ -103,7 +103,7 @@ cd $MasterDir
 echo "Bancho Server setup is done!"
 
 echo "Setting up LETS server & oppai..."
-git clone https://github.com/osuthailand/lets
+git clone https://github.com/Lumilous-Private-osu/lets
 cd lets
 python3.6 -m pip install -r requirements.txt
 git submodule init && git submodule update
@@ -152,7 +152,7 @@ echo "NGINX server setup is done!"
 
 echo "Setting up database..."
 # Download SQL folder
-wget -O ripple.sql https://raw.githubusercontent.com/osuthailand/ripple-auto-installer/master/ripple_database.sql
+wget -O ripple.sql https://raw.githubusercontent.com/Lumilous-Private-osu/ripple-auto-installer/master/ripple_database.sql
 mysql -u "$mysql_usr" -p"$mysql_psw" -e 'CREATE DATABASE ripple;'
 mysql -u "$mysql_usr" -p"$mysql_psw" ripple < ripple.sql
 echo "Database setup is done!"
@@ -160,14 +160,14 @@ echo "Database setup is done!"
 echo "Setting up hanayo..."
 mkdir hanayo
 cd hanayo
-go get -u github.com/osuthailand/hanayo
+go get -u github.com/Lumilous-Private-osu/hanayo
 
 mv /root/go/bin/hanayo ./
-mv /root/go/src/github.com/osuthailand/hanayo/data ./data
-mv /root/go/src/github.com/osuthailand/hanayo/scripts ./scripts
-mv /root/go/src/github.com/osuthailand/hanayo/static ./static
-mv /root/go/src/github.com/osuthailand/hanayo/templates ./templates
-mv /root/go/src/github.com/osuthailand/hanayo/website-docs ./website-docs
+mv /root/go/src/github.com/Lumilous-Private-osu/hanayo/data ./data
+mv /root/go/src/github.com/Lumilous-Private-osu/hanayo/scripts ./scripts
+mv /root/go/src/github.com/Lumilous-Private-osu/hanayo/static ./static
+mv /root/go/src/github.com/Lumilous-Private-osu/hanayo/templates ./templates
+mv /root/go/srcgithub.com/Lumilous-Private-osu/hanayo/website-docs ./website-docs
 sed -i 's#ripple.moe#'$domain'#' templates/navbar.html
 ./hanayo
 sed -i 's#ListenTo=#ListenTo=127.0.0.1:'$hanayo_port'#g; s#AvatarURL=#AvatarURL=https://a.'$domain'#g; s#BaseURL=#BaseURL=https://'$domain'#g; s#APISecret=#APISecret='$hanayo_apisecret'#g; s#BanchoAPI=#BanchoAPI=https://c.'$domain'#g; s#MainRippleFolder=#MainRippleFolder='$MasterDir'#g; s#AvatarFolder=#AvatarFolder='$MasterDir'/nginx/avatar-server/avatars#g; s#RedisEnable=false#RedisEnable=true#g' hanayo.conf
@@ -179,7 +179,7 @@ echo "Hanayo setup is done!"
 echo "Setting up API..."
 mkdir rippleapi
 cd rippleapi
-go get -u github.com/osuthailand/api
+go get -u github.com/Lumilous-Private-osu/api
 mv /root/go/bin/api ./
 ./api
 sed -i 's#root@#'$mysql_usr':'$mysql_psw'@#g; s#Potato#'$hanayo_apisecret'#g; s#OsuAPIKey=#OsuAPIKey='$peppy_cikey'#g' api.conf
@@ -187,13 +187,13 @@ cd $MasterDir
 echo "API setup is done!"
 
 echo "Setting up avatar server..."
-git clone https://github.com/osuthailand/avatar-server
+git clone https://github.com/Lumilous-Private-osu/avatar-server
 python3.6 -m pip install Flask
 echo "Avatar Server setup is done!"
 
 echo "Setting up backend..."
 cd /var/www/
-git clone https://github.com/osuthailand/old-frontend
+git clone https://github.com/Lumilous-Private-osu/old-frontend
 mv old-frontend osu.ppy.sh
 cd osu.ppy.sh
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer

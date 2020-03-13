@@ -1,15 +1,23 @@
+<p align="center">
+  <img src="https://osu.lumilous.tk/static/black.png" alt="logo" width="400" />
+</p>
+
+<p align="center">
+Made with ❤️ by <img src="https://osu.lumilous.tk/static/github/Varkaria.png" alt="logo" width="100" /></p> And <img src="https://osu.lumilous.tk/static/github/LumilousCD.png" alt="logo" width="100" /></p>
+
+<p align="center">
+  <b>This is open source osu!lumilous Hanayo for osu!private server</b></br>
+  <span>Ripple -> Ainu -> Lumilous</span></br>
+</p>
+
+<p align="center"> <img alt="GitHub tag (latest by date)" src="https://img.shields.io/badge/Status-Worked-green">  <img src="https://img.shields.io/github/v/tag/Lumilous-Private-osu/ripple-auto-installer"> <img src="https://img.shields.io/github/forks/Lumilous-Private-osu/ripple-auto-installer?style=social"> </p>
+
 # ripple-auto-installer
 <b>**THIS SCRIPT IS NOT FOR LOCAL PC**</b><br>
-Aoba's Ripple osu! server installer!
+osu!lumilous osu! server installer!
 
-# Note
-This Installer just install most things for server! If you want to use custom modify, You need to edit it yourself. and please fork this project if you use it! (THIS IS NOT DESIGNED FOR WINDOWS!)
-
-# What the heck is it?
-It's my Ripple auto installer because I'm lazy to write very very looooooong command to setup it. So I decided to make my own installer!
-
-# How to use it?
-It's simple. Firstly, you need to download it by either downloading it from GitHub, or running this command to download: `wget https://raw.githubusercontent.com/osuthailand/ripple-auto-installer/master/installer.sh`
+<h1 align="center">How to Install?</h1>
+It's simple. Firstly, you need to download it by either downloading it from GitHub, or running this command to download: `wget https://raw.githubusercontent.com/Lumilous-Private-osu/ripple-auto-installer/master/installer.sh`
 
 After you do this, copy, paste and run the command: `chmod +x installer.sh && ./installer.sh`, and it will take you into the install process!
 
@@ -25,7 +33,7 @@ Make sure you set your DNS like this:
 # I need help!
 You can ask for help via Discord DMs or through Github Issues.<br>
 <br>
-@Aoba Suzukaze#9999 - Aoba (Hazuki-san)
+@Varkaria#7055 in Discord!
 
 # Credits
 * <a href=https://github.com/ppy>peppy</a> - Thank you for the wonderful game and I'm sorry for your bancho.
